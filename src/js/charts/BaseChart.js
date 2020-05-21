@@ -163,7 +163,11 @@ export default class BaseChart {
 
 	makeChartArea() {
 		if(this.svg) {
-			this.container.removeChild(this.svg);
+			try{
+				this.container.removeChild(this.svg);
+			} catch(e) {
+				() => {};
+			}
 		}
 		let m = this.measures;
 
